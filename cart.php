@@ -49,8 +49,8 @@ if(!isset($_SESSION["uid"])){
                             <div class="col-md-2"><b>Action</b></div>
                             <div class="col-md-2"><b>Product Image</b></div>
                             <div class="col-md-2"><b>Product Name</b></div>
-                            <div class="col-md-2"><b>Product Price</b></div>
                             <div class="col-md-2"><b>Quantity</b></div>
+                            <div class="col-md-2"><b>Product Price</b></div>
                             <div class="col-md-2"><b>Price in $</b></div>
                         </div>
                         <div id="cart_checkout"></div>

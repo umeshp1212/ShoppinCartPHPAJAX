@@ -54,7 +54,7 @@ if(!isset($_SESSION["uid"])){
             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" ><span class="glyphicon glyphicon-user"></span><?php echo "Hi," .$_SESSION["name"];?></a>
 
                 <ul class="dropdown-menu">
-                   <li><a href="" style="text-decoration:none;color:blue;"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+                   <li><a href="cart.php" style="text-decoration:none;color:blue;"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
                    <li class="divider"></li>
                    <li><a href="" style="text-decoration:none;color:blue;">Change Password</a></li>
                    <li class="divider"></li>

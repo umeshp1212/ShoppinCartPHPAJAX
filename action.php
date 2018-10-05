@@ -219,4 +219,22 @@ if(isset($_POST["brand"])){
 		}
 	}
 
+	if(isset($_POST["updateProduct"])){
+		$uid = $_SESSION["uid"];
+		$pid = $_POST["updateID"];
+		$qty = $_POST["qty"];
+		$price = $_POST["price"];
+		$total = $_POST["total"];
+
+		$sql = "UPDATE cart SET qty = '$qty', price = '$price', total_amount = '$total' WHERE user_id='$uid' AND p_id = '$pid'";
+		$run_query = mysqli_query($con, $sql);
+		if($run_query){
+			echo "<div class='alert alert-success'>
+							 <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+							 <b>Cart is Updated..!</b>
+				  </div>";
+		}
+
+	}
+
 ?>
