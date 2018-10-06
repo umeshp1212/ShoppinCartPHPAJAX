@@ -163,6 +163,7 @@ if(isset($_POST["brand"])){
 		$count = mysqli_num_rows($run_query);
 		if($count > 0){
 			$i=1;
+			$total_amt = 0;
 			while($row = mysqli_fetch_array($run_query)){
 				$pro_id = $row["p_id"];
 				$pro_image = $row["product_image"];
@@ -170,6 +171,9 @@ if(isset($_POST["brand"])){
 				$pro_price = $row["price"];
 				$qty = $row["qty"];
 				$total = $row["total_amount"];
+				$price_array = array($total);
+				$total_sum = array_sum($price_array);
+				$total_amt = $total_amt + $total_sum;
 				if(isset($_POST['get_cart_product'])){
 					
 					echo  "<div class='row'>
@@ -197,6 +201,16 @@ if(isset($_POST["brand"])){
 					<div class='col-md-2'><input type='text' class='form-control total' pid = '$pro_id' id='total-$pro_id' value='$total' disabled></div>
 					</div>";
 				}
+			}
+			
+			if(isset($_POST['cart_checkout'])){
+				echo "<div class='row'>
+						<div class='col-md-8'></div>
+						<div class='col-md-4'>
+							<b> Total: $total_amt</b>
+						</div>	
+					</div>
+				";
 			}
 		} else {
 			echo "<div class='row'>
